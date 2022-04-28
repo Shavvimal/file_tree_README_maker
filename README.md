@@ -3,6 +3,15 @@
 Ensure all file names dont include spaces. Use this command to rename all files in the cwd by removing all the spaces and replacing with underscores:
 
 ```for f in *.*; do mv "$f" "${f// /_}"; done```
+## Recursively rename files
+Replace all spaces in current working directory recursively with an underscore
+
+```while read line ; do mv "$line" "${line// /_}" ; done < <(find ./ -iname "* *")```
+
+Remove all spaces in current working directory recursively
+
+```while read line ; do mv "$line" "${line// /}" ; done < <(find ./ -iname "* *")```
+
 ## Generate README.md
 use:
 
