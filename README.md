@@ -19,3 +19,12 @@ example:
 ## Generate list without hierachy
 use:
 ```find . -name "*" | sed "s|^\./\(.*\)|* \[\1\]($url/$repo/$branch/\1)|"```
+## Example for this Repo
+Run: 
+
+```find . -type f \( -name '*.bash' -o -name '*.md' \) | sort -t '/' -k 1 -k 2 | awk -v base=https://github.com/Shavvimal/file_tree_README_maker/blob/main/ -f ./scr.bash >> README.md ```
+
+to get: 
+
+ * [README.md](https://github.com/Shavvimal/file_tree_README_maker/blob/main/README.md)
+ * [scr.bash](https://github.com/Shavvimal/file_tree_README_maker/blob/main/scr.bash)
